@@ -42,8 +42,8 @@ class Bitacora(models.Model):
           verbose_name_plural = "Bitacoras"
 
       #Relations
-      usuario = models.OneToOneField(MyUser)
-      vuelo = models.OneToOneField(Vuelo)
+      usuario = models.ForeignKey(MyUser)
+      vuelo = models.ForeignKey(Vuelo)
   
       def __str__(self):
           return self.usuario

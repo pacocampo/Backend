@@ -10,7 +10,7 @@ class Destino(models.Model):
         verbose_name_plural = "Destinos"
 
     #Relations
-    categoria = models.OneToOneField(Category)
+    categoria = models.ForeignKey(Category)
 
     #Attributes
     nombre = models.CharField(max_length=100, blank=False)
