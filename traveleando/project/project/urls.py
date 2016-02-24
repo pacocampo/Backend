@@ -16,7 +16,11 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from destino import views
+from Aerolinea import views as aeViews
 
 urlpatterns = [
+	url(r'^$', views.index, name='index'),
     url(r'^admin/', admin.site.urls),
+    url(r'^vuelos/', aeViews.Aero, name='aerolineas')
 ]

@@ -1,0 +1,35 @@
+{% extends "header.html" %}
+	{% block title %}
+		Destino
+	{% endblock  %}
+	{% block titulo %}
+		Este es el h1 del Destino
+	{% endblock %}
+	{% block content %}
+		<ul>
+		{% for destino in destinos  %}
+			<li>{{destino.nombre}}</li>
+			<li>{{destino.pais}}</li>
+			<li>{{destino.continente}}</li>
+			<li>{{destino.rating}}</li>	
+		{% endfor %}
+		</ul>
+
+		<form method="POST" action="/">
+			{% csrf_token %}
+			{{form.as_p}}
+			<input type="submit" value="save">
+			{% if form.errors %}
+				{% for error in form.errors  %}
+					<p>{{error}}</p>
+				{% endfor %}
+			{% endif %}
+		</form>
+
+		
+
+	{% endblock content %}
+	
+
+
+{% include "footer.html" %}
